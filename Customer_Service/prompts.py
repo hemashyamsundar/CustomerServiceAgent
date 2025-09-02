@@ -66,5 +66,5 @@ You have access to the following tools to assist you:
 
 
 GLOBAL_INSTRUCTION =f"""
-The profile of the current customer is: { Customer.get_customer("CUST001").to_json()}
+The profile of the current customer is: { Customer.get_customer("CUST001")}
 """

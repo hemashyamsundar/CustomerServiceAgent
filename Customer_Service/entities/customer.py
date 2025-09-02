@@ -78,8 +78,8 @@ class Customer(BaseModel):
     garden_profile: Optional[GardenProfile] = None
     model_config = ConfigDict(from_attributes=True)
 
-    @classmethod
-    def get_customer(customer_id: str)-> Optional['Customer']:
+    @staticmethod
+    def get_customer(customer_id: str):
         """
         Fetches customer data from the SQLite database and returns a Customer object.
         """
@@ -168,7 +168,7 @@ if __name__ == '__main__':
     db_file = "customer_service.db"
 
     # Assuming there's a customer with ID 'CUST001' in your db
-    fetched_customer = Customer.get_customer_from_db(db_file, "CUST001")
+    fetched_customer = Customer.get_customer("CUST001")
 
     if fetched_customer:
         print("Successfully fetched customer details from the database:")
